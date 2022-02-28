@@ -87,7 +87,7 @@ for days in range(0, 540):
 
 ## 3. 랜덤 포레스트 학습
 
-![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%201.png>)
+![](https://user-images.githubusercontent.com/52296323/155922413-e70d5d30-30bb-4be5-9306-766f3428d0be.png)
 
 > **learning features**
 
@@ -106,7 +106,7 @@ for days in range(0, 540):
 
    > **참여도가 높은 참여자들은 참여자 리스트에 0~49 위치에 위치해 있다.**
 
-   ![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%202.png>)
+   ![Untitled 2](https://user-images.githubusercontent.com/52296323/155922422-c11d7414-90de-4a66-a90a-0102697e82c6.png)
 
    - column description
      - imp features : 참여자가 중요하다고 생각하는 특징
@@ -119,7 +119,7 @@ for days in range(0, 540):
 
    - 참여도가 높은 모든 참여자들은 실제 참여자가 중요하게 생각하고 설문점수에 반영하는 특징들과 RF Model이 특징 변화에 따른 점수 예측을 학습할 때 가장 중요하게 사용했던 특징들은 같게 나왔다.
 
-   ![참여도가 높은 50명의 사용자의 중요 특징과 RF 학습에 쓰인 중요 특징](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%203.png>)
+   ![참여도가 높은 50명의 사용자의 중요 특징과 RF 학습에 쓰인 중요 특징](https://user-images.githubusercontent.com/52296323/155922448-0bbdf1a8-ff26-474d-93ef-91749aa60d10.png)
 
    참여도가 높은 50명의 사용자의 중요 특징과 RF 학습에 쓰인 중요 특징
 
@@ -127,19 +127,19 @@ for days in range(0, 540):
 
    > **참여도가 낮은 참여자들은 참여자 리스트에 50~99 위치에 위치해 있다.**
 
-   ![설문조사를 무조건 1자로 기입하거나, 마구잡이로 점수를 부여하는 참여도가 낮은 참여자들](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%204.png>)
+   ![설문조사를 무조건 1자로 기입하거나, 마구잡이로 점수를 부여하는 참여도가 낮은 참여자들](https://user-images.githubusercontent.com/52296323/155922479-3922cccd-d8b6-41b6-bffd-b1e9c623773d.png)
 
    설문조사를 무조건 1자로 기입하거나, 마구잡이로 점수를 부여하는 참여도가 낮은 참여자들
 
    - 참여도가 낮은 참여자들은 자신이 설문점수에 반영하는데 특징들을 반영하지 않는다. 그래서 이들을 RF Model 에 학습을 시키게 되면 매 설문조사 회차마다 점수가 달라지거나 같으므로, 변수 중요도로 설문점수번호(no)가 나타나는 것을 확인할 수 있었다. 또한 RF Model이 학습이 제대로 되지 않아 mse도 참여도가 높은 참여자들에 비해 높게 나오는 것을 확인할 수 있었다.
 
-   ![설문조사를 무조건 1자로 기입하는 참여도가 낮은 참여자들](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%205.png>)
+   ![설문조사를 무조건 1자로 기입하는 참여도가 낮은 참여자들](https://user-images.githubusercontent.com/52296323/155922504-66779b43-b262-4470-8ea7-72d79c743473.png)
 
    설문조사를 무조건 1자로 기입하는 참여도가 낮은 참여자들
 
    - 무조건 1자로 기입하는 참여도가 낮은 참여자들은 RF Model이 의사결정을 내릴때 하나의 점수로만 예측을 하면 됨으로 mse가 0값으로 나타나는 것을 확인할 수 있었고, 예측하는데에 특징을 사용하지 않기 때문에 모델이 모든 특징의 중요도를 0으로 측정해서 RF Model 상에도 중요특징이 나타나지 않은 것을 확인할 수 있었다.
 
-   ![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%206.png>)
+   ![](https://user-images.githubusercontent.com/52296323/155922531-2264ac8f-eb43-4ff4-9069-6950756821be.png)
 
 3. 설문조사 타깃 (특정 건물 또는 호) 학습
 
@@ -147,14 +147,14 @@ for days in range(0, 540):
 
 - **설문점수 평균치**
   > **참여도가 높은 참여자들만으로 설문점수를 평균을 내어, 이를 라벨로 사용하여, 위에서 사용한 특징들을 그대로 사용해서 랜덤포레스트 학습을 시키면, 특정 건물 또는 호의 참여도가 높은 참여자들이 선호하는 특징들 순으로 주요 특징을 확인할 수 있다.**
-  > ![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%207.png>)
+  > ![](https://user-images.githubusercontent.com/52296323/155922578-f6cb6fa8-4326-4c68-b1cf-4884d6efeee2.png)
   - 해당 랜덤포레스트의 결과로는 습도(hum) → 조도(lux) → temp(온도) 순으로 평균 설문점수를 예측하게 중요하게 쓰이는 특징들을 보여줬다.
-    ![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%208.png>)
+    ![Untitled 8](https://user-images.githubusercontent.com/52296323/155922606-691b5aae-c737-4375-a857-835290b6e87f.png)
   - 그리고 실제 참여도가 높은 참여자들이 가장 선호하는 특징은 습도 → 조도 → 온도 순으로 나타났다.
 - **새로운 설문조사 예측 및 실제값**
   > **위에서 참여도가 높은 참여자들만으로 특정 건물 또는 호의 랜덤포레스트 학습 모델을 만들었다. 이제 새로운 설문조사 시뮬레이션을 돌려 참여도가 높은 참여자들의 설문점수 평균 값과 해당 모델의 예측값에 차이가 어느정도 나는지 확인해보도록 하자.**
-  > ![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%209.png>)
-  > ![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%2010.png>)
+  > ![Untitled 9](https://user-images.githubusercontent.com/52296323/155922627-2a938370-63b9-4b0d-b07e-2088690113e9.png)
+  > ![Untitled 10](https://user-images.githubusercontent.com/52296323/155922637-98a90cfb-ec0d-4e0a-957a-b277cc8a6592.png)
   - 해당 모델은 1점의 오차도 안 되는 값으로 특정 건물 혹은 호의 참여도가 높은 참여자들의 평균 설문점수 값을 예측해냈다.
 - **최적 특징 범위 구하기**
   > 참여도가 높은 참여자들을 토대로 훈련된 모델이 예측을 잘 해낼 수 있다는 것을 확인했다. 이제는 특징별로 어떤 범위에서 참여자들이 설문점수를 높게주는지, 그들이 만족하는지, 확인을 해보도록 하겠다.
@@ -162,17 +162,17 @@ for days in range(0, 540):
     1. 온도, 습도, 조도 별로 값을 늘려갈 것이다. 온도를 올려주고 있을 때는 습도와 조도를 고정값으로 고정할 것이며, 습도를 올릴때는 온도와 조도를 고정 시킨 상태로 습도만 올리고와 같이 모델로 예측값을 뽑아낸다.
     2. 뽑아진 예측값의 이동평균을 구하여 특징별로 어떤 값의 범위에서 참여자들의 설문점수가 높게 나오는지 확인해보도록 하자.
 
-![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%2011.png>)
+![Untitled 11](https://user-images.githubusercontent.com/52296323/155922645-785b51eb-775f-42e6-91f5-a860892632bd.png)
 
-![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%2012.png>)
+![Untitled 12](https://user-images.githubusercontent.com/52296323/155922655-15027bb3-b916-4039-9763-7e7c0e424d2d.png)
 
-![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%2013.png>)
+![Untitled 13](https://user-images.githubusercontent.com/52296323/155922662-93a22093-ea91-470c-be78-4fd0d5be00f6.png)
 
-![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%2014.png>)
+![Untitled 14](https://user-images.githubusercontent.com/52296323/155922667-3b2c0ddc-456f-4501-b4cc-4be97e1c3d56.png)
 
-![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%2015.png>)
+![Untitled 15](https://user-images.githubusercontent.com/52296323/155922681-f021e441-c64b-44a8-a6ae-68a8d2c5e835.png)
 
-![Untitled](<(%E1%84%90%E1%85%B3%E1%86%A8%E1%84%92%E1%85%A5)%20su%20ddb73/Untitled%2016.png>)
+![Untitled 16](https://user-images.githubusercontent.com/52296323/155922689-1fec7aa6-de2e-4f95-8c08-9c9de2aabd1a.png)
 
-- 위의 특징별 구간은 실제로 임의의 선호 특징을 가지고 있는 사용자 객체를 만들기 전에 설정했던 [실내 적정값의 선호 구간안에 있는 구간](https://www.notion.so/survey-learning-system-37a72ef19fda4ba59c440b0e1f2e3dac)이다.
+- 위의 특징별 구간은 실제로 임의의 선호 특징을 가지고 있는 사용자 객체를 만들기 전에 설정했던 [실내 적정값의 선호 구간안에 있는 구간] 이다.
 - 오른쪽의 도표는 해당 구간의 모든 조합으로 모델을 예측하고, 사용자 객체에 설문조사를 실시한 값으로 약 3점정도의 오차를 보여줬다.
